@@ -5,7 +5,7 @@ import numpy as np
 st.title('Cicle Rides in NYC')
 
 DATE_COLUMN = 'started_at'
-DATA_URL = ('/content/citibike-tripdata.csv')
+DATA_URL = ('citibike-tripdata.csv')
 
 @st.cache
 def load_data(nrows):
