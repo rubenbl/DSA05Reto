@@ -71,9 +71,9 @@ if (btnBuscarEmpleadoUnit):
 
 # Sección - Búsqueda por Unit (selectedbox)
 selectedboxUnit = st.sidebar.selectbox("Seleccionar Unit", df_empleados['Unit'].unique())
-btnBuscarEmpleadoUnit = st.sidebar.button('Buscar empleado ')
+btnBuscarEmpleadoUnitPorSelectedBox = st.sidebar.button('Buscar empleado por "Unit"')
 
-if (btnFilterbyDirector):
+if (btnBuscarEmpleadoUnitPorSelectedBox):
    df_filtroEmpleadosUnit = buscarEmpleadoPorUnit(selectedboxUnit)
    contador = df_filtroEmpleadosUnit.shape[0]  
    st.write(f"Total de empleados identificados : {contador}")
