@@ -55,6 +55,7 @@ def buscarEmpleadoPorUnitCaseSensitive(texto):
 
 # Sección - Pre-carga de datos.
 #df_empleados = cargarDatosEjemplo(500)
+df_empleados = cargarDatosCompleto()
 
 st.sidebar.title("Búsqueda interactiva de empleados")
 st.sidebar.markdown("""
