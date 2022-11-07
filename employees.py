@@ -182,7 +182,7 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
     st.dataframe(df_empleadosResumen)
     
 # Sección - Mostrar/ocultar gráfico edad vs. tasa de deserción
-if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
+if st.sidebar.checkbox('Mostrar/ocultar gráfico edad vs. tasa de deserción'):
     st.subheader('Grafico')
     st.write("\n16. Analizar la información con una gráfica que permita visualizar la edad y la tasa de deserción. ")
     # Grafico: Seaborn
