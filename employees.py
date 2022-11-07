@@ -189,7 +189,7 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico edad vs. tasa de deserción'):
     grafico = plt.figure(figsize=(10, 5))
     sns.scatterplot(x=df_empleados['Age'] , y=df_empleados['Attrition_rate'])
     st.pyplot(grafico)
-    st.dataframe(df_empleados[['Age','Attrition_rate']].head(5))
+    #st.dataframe(df_empleados[['Age','Attrition_rate']].head(5))
     
 # Sección - Mostrar/ocultar gráfico tiempo de servicio vs. tasa de deserción
 if st.sidebar.checkbox('Mostrar/ocultar gráfico tiempo de servicio vs. tasa de deserción'):
@@ -199,4 +199,4 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico tiempo de servicio vs. tasa de 
     grafico = plt.figure(figsize=(10, 5))
     sns.scatterplot(x=employees['Time_of_service'] , y=employees['Attrition_rate'])
     st.pyplot(grafico)
-    st.dataframe(df_empleados[['Time_of_service','Attrition_rate']].head(5))
+    #st.dataframe(df_empleados[['Time_of_service','Attrition_rate']].head(5))
