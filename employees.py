@@ -134,7 +134,7 @@ if st.sidebar.checkbox('Mostrar/ocultar grafica de frecuencias'):
     st.write("\n14. Crear una gráfica de frecuencias para las unidades funcionales (Unit) para conocer cuántos empleados hay en cada Unidad. ")
     # Grafico: Seaborn
     grafico = plt.figure(figsize=(10, 5))
-    sns.countplot(y='Unit', data=employees, order=employees['Unit'].value_counts().index)
+    sns.countplot(y='Unit', data=df_empleados, order=df_empleados['Unit'].value_counts().index)
     plt.xticks(rotation=90)
     st.pyplot(grafico)
     
