@@ -174,6 +174,7 @@ if st.sidebar.checkbox('Mostrar/ocultar grafica de frecuencias'):
 if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
     st.subheader('Grafico')
     st.write("\n15. Analizar los datos con una gráfica que nos permita visualizar las ciudades (Hometown) que tienen el mayor índice de deserción. ")
+    st.write("\nrespuesta: Springfield es la ciudad con mayor indice de deserción (Attrition_rate).")
     # Grafico: 
     df_empleadosResumen = df_empleados.groupby(['Hometown']).mean()
     df_empleadosResumen = df_empleadosResumen.sort_values('Hometown', ascending=True)['Attrition_rate']
