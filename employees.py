@@ -10,3 +10,6 @@ def cargarDatos(nrows):
     return data
 
 df = cargarDatos(500)
+
+st.subheader('dataframe (employees)')
+st.write(df)
