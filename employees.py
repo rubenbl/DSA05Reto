@@ -39,7 +39,8 @@ def buscarEmpleadoPorHometownCaseSensitive(texto):
 
 @st.cache
 def buscarEmpleadoPorUnitCaseSensitive(texto):
-    df_tmp = df_empleados[df_empleados['Unit'].str.contains(texto)]
+    #df_tmp = df_empleados[df_empleados['Unit'].str.contains(texto)]
+    df_tmp = df_empleados.query(' (Unit == @texto ) ') 
     return df_tmp
 
 # ###############################################
@@ -111,7 +112,8 @@ selectedboxUnit = st.sidebar.selectbox("Seleccionar Unit", df_empleados['Unit'].
 btnBuscarEmpleadoUnitPorSelectedBox = st.sidebar.button('Buscar empleado por "Unit"')
 
 if (btnBuscarEmpleadoUnitPorSelectedBox):
-   df_filtroEmpleadosUnit = buscarEmpleadoPorUnitCaseSensitive(selectedboxUnit)
+   df_filtroEmpleadosUnit = buscarEmpleadoPorUnitCaseSensitive(selectedboxUnit) 
    contador = df_filtroEmpleadosUnit.shape[0]  
+   st.write("\n12. Crear un selectedbox para filtrar por la unidad funcional (Unit) a la que pertenece. Nota: Usar funciones con cache.")
    st.write(f"Total de empleados identificados : {contador}")
    st.dataframe(df_filtroEmpleadosUnit)
