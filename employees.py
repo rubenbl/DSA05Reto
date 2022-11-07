@@ -91,7 +91,8 @@ btnBuscarEmpleadoEducationLevelPorSelectedBox = st.sidebar.button('Buscar emplea
 if (btnBuscarEmpleadoEducationLevelPorSelectedBox):
    df_filtroEmpleadosEducationLevel = buscarEmpleadoPorEducationLevelCaseSensitive(selectedboxEducationLevel)
    contador = df_filtroEmpleadosEducationLevel.shape[0]  
-   st.write(f"Total de empleados identificados : {contador}")
+   st.write("\n10. En el sidebar incluir un control selectedbox que permita filtrar los empleados por su nivel educativo, mostrar el dataframe filtrado y total de empleados. Nota: Usar funciones con cache.")
+   st.write(f"\nTotal de empleados identificados : {contador}")
    st.dataframe(df_filtroEmpleadosEducationLevel)
    
 # Sección - Búsqueda por Hometown (selectedbox)
