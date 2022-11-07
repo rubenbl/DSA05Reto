@@ -34,7 +34,7 @@ if st.sidebar.checkbox('Mostrar/ocultar el dataframe'):
     st.write(df_empleados)
 
 inputEmpleadoID = st.sidebar.text_input('Busqueda por "Employee_ID" : ')
-btnBuscarEmpleadoID = st.sidebar.button('Buscar')
+btnBuscarEmpleadoID = st.sidebar.button('Buscar ID')
 
 if (btnBuscarEmpleadoID):
    df_filtroEmpleadosID = buscarEmpleadoPorID(inputEmpleadoID.upper())
@@ -43,7 +43,7 @@ if (btnBuscarEmpleadoID):
    st.write(df_filtroEmpleadosID)
     
 inputEmpleadoHometown = st.sidebar.text_input('Busqueda por "Hometown" : ')
-btnBuscarEmpleadoHometown = st.sidebar.button('Buscar1')
+btnBuscarEmpleadoHometown = st.sidebar.button('Buscar Hometown')
 
 if (btnBuscarEmpleadoHometown):
    df_filtroEmpleadosHometown = buscarEmpleadoPorHometown(inputEmpleadoHometown.upper())
