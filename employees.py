@@ -138,7 +138,18 @@ if st.sidebar.checkbox('Mostrar/ocultar grafica de frecuencias'):
     plt.xticks(rotation=90)
     st.pyplot(grafico)
     # Tabla resumen
-    df_employeesResumen = df_empleados[['Employee_ID','Unit']].groupby(['Unit']).count()
-    df_employeesResumen.sort_values('Employee_ID', ascending=False)
-    st.dataframe(df_employeesResumen)
+    #df_employeesResumen = df_empleados[['Employee_ID','Unit']].groupby(['Unit']).count()
+    #df_employeesResumen.sort_values('Employee_ID', ascending=False)
+    #st.dataframe(df_employeesResumen)
+    
+# Sección - Mostrar/ocultar gráfico mayor índice de deserción
+if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
+    st.subheader('Grafico')
+    st.write("\n15. Analizar los datos con una gráfica que nos permita visualizar las ciudades (Hometown) que tienen el mayor índice de deserción. ")
+    # Grafico: 
+    df_empleadosResumen = df_empleados.groupby(['Hometown']).mean()
+    df_empleadosResumen.sort_values('Hometown', ascending=True)
+    df_empleadosResumen.plot(subplots=True, layout=(2,5), figsize=(30,10)) 
+    st.pyplot(df_empleadosResumen)
+
     
