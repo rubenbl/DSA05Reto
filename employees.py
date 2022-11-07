@@ -152,5 +152,6 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
     df_empleadosResumen.sort_values('Hometown', ascending=True)
     axs = df_empleadosResumen.plot(subplots=True, layout=(2,5)) 
     st.pyplot(fig)
+    st.dataframe(df_employeesResumen)
 
     
