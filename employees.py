@@ -5,7 +5,7 @@ import numpy as np
 st.title('Empleados')
 
 @st.cache
-def load_data(nrows):
+def cargarDatos(nrows):
     data = pd.read_csv('Employees.csv', nrows=nrows)
     return data
 
