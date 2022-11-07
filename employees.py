@@ -123,9 +123,8 @@ if (btnBuscarEmpleadoUnitPorSelectedBox):
 if st.sidebar.checkbox('Mostrar/ocultar histograma'):
     st.subheader('Histograma')
     st.write("\n13. Crear un histograma de los empleados agrupados por edad. ")
-    st.write(df_empleados)
     # Grafico: Seaborn
-    grafico = plt.figure(figsize=(10, 4))
+    grafico = plt.figure(figsize=(10, 5))
     sns.histplot(x=df_empleados['Age'])
     st.pyplot(grafico)
 
