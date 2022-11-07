@@ -12,8 +12,9 @@ def cargarDatos(nrows):
     data = pd.read_csv('Employees.csv', nrows=nrows)
     return data
 
+@st.cache
 def buscarEmpleadoPorID(texto):
-    df_tmp = data[data['Employee_ID'].str.upper().str.contains(texto)]
+    df_tmp = df_empleados[df_empleados['Employee_ID'].str.upper().str.contains(texto)]
     return df_tmp
 
 # ###############################################
