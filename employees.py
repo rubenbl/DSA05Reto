@@ -137,6 +137,8 @@ if st.sidebar.checkbox('Mostrar/ocultar grafica de frecuencias'):
     sns.countplot(y='Unit', data=df_empleados, order=df_empleados['Unit'].value_counts().index)
     plt.xticks(rotation=90)
     st.pyplot(grafico)
-    
-    
+    # Tabla resumen
+    df_employeesResumen = df_empleados[['Employee_ID','Unit']].groupby(['Unit']).count()
+    df_employeesResumen.sort_values('Employee_ID', ascending=False)
+    st.dataframe(df_employeesResumen)
     
