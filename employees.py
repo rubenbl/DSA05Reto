@@ -149,7 +149,7 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
     # Grafico: 
     df_empleadosResumen = df_empleados.groupby(['Hometown']).mean()
     df_empleadosResumen.sort_values('Hometown', ascending=True)
-    df_empleadosResumen.plot(subplots=True, layout=(2,5), figsize=(30,10)) 
-    st.pyplot(df_empleadosResumen)
+    fig,axs = df_empleadosResumen.plot(subplots=True, layout=(2,5), figsize=(30,10)) 
+    st.pyplot(fig)
 
     
