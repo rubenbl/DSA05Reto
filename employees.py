@@ -152,6 +152,6 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
     #fig, ax = plt.subplots()
     #ax = df_empleadosResumen.plot(subplots=True, layout=(2,5),figsize=(30,10)) 
     #st.pyplot(fig)
-    st.linechart(df_empleadosResumen)
+    st.line_chart(df_empleadosResumen)
     
     
