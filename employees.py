@@ -39,7 +39,6 @@ def buscarEmpleadoPorHometownCaseSensitive(texto):
 
 @st.cache
 def buscarEmpleadoPorUnitCaseSensitive(texto):
-    #df_tmp = df_empleados[df_empleados['Unit'].str.contains(texto)]
     df_tmp = df_empleados.query(' (Unit == @texto ) ') 
     return df_tmp
 
@@ -117,3 +116,11 @@ if (btnBuscarEmpleadoUnitPorSelectedBox):
    st.write("\n12. Crear un selectedbox para filtrar por la unidad funcional (Unit) a la que pertenece. Nota: Usar funciones con cache.")
    st.write(f"Total de empleados identificados : {contador}")
    st.dataframe(df_filtroEmpleadosUnit)
+
+# Sección - Mostrar/ocultar histograma
+if st.sidebar.checkbox('Mostrar/ocultar histograma'):
+    st.subheader('dataframe (employees)')
+    st.write("\nCrear un histograma de los empleados agrupados por edad. ")
+    st.write(df_empleados)
+
+
