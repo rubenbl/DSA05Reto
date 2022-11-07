@@ -70,7 +70,7 @@ if (btnBuscarEmpleadoUnit):
    st.write(df_filtroEmpleadosUnit)
 
 # Sección - Búsqueda por Unit (selectedbox)
-selectedboxUnit = st.sidebar.selectbox("Seleccionar Director", data['director'].unique())
+selectedboxUnit = st.sidebar.selectbox("Seleccionar Unit", df_empleados['Unit'].unique())
 btnBuscarEmpleadoUnit = st.sidebar.button('Buscar empleado ')
 
 if (btnFilterbyDirector):
