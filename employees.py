@@ -177,7 +177,7 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
     # Grafico: 
     df_empleadosResumen = df_empleados.groupby(['Hometown']).mean()
     df_empleadosResumen = df_empleadosResumen.sort_values('Hometown', ascending=True)['Attrition_rate']
-    st.line_chart(df_empleadosResumen)
+    st.line_chart(df_empleadosResumen, y='Attrition_rate')
     st.dataframe(df_empleadosResumen)
     
     
