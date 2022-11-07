@@ -101,7 +101,8 @@ btnBuscarEmpleadoHometownPorSelectedBox = st.sidebar.button('Buscar empleado por
 if (btnBuscarEmpleadoHometownPorSelectedBox):
    df_filtroEmpleadosHometown = buscarEmpleadoPorHometownCaseSensitive(selectedboxHometown)
    contador = df_filtroEmpleadosHometown.shape[0]  
-   st.write(f"Total de empleados identificados : {contador}")
+   st.write("\nEn el sidebar crear un control selectedbox con las ciudades que participaron en el estudio, mostrar los empleados por ciudad en un dataframe filtrado y total de empleados. Nota: Usar funciones con cache.")
+   st.write(f"\nTotal de empleados identificados : {contador}")
    st.dataframe(df_filtroEmpleadosHometown)
 
 # Sección - Búsqueda por Unit (selectedbox)
