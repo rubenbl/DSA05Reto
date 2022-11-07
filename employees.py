@@ -197,6 +197,6 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico tiempo de servicio vs. tasa de 
     st.write("\n17. Analizar con una gráfica que determine la relación entre el tiempo de servicio y la tasa de deserción. ")
     # Grafico: Seaborn
     grafico = plt.figure(figsize=(10, 5))
-    sns.scatterplot(x=employees['Time_of_service'] , y=employees['Attrition_rate'])
+    sns.scatterplot(x=df_empleados['Time_of_service'] , y=df_empleados['Attrition_rate'])
     st.pyplot(grafico)
     #st.dataframe(df_empleados[['Time_of_service','Attrition_rate']].head(5))
