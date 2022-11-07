@@ -119,8 +119,8 @@ if (btnBuscarEmpleadoUnitPorSelectedBox):
 
 # Sección - Mostrar/ocultar histograma
 if st.sidebar.checkbox('Mostrar/ocultar histograma'):
-    st.subheader('dataframe (employees)')
-    st.write("\nCrear un histograma de los empleados agrupados por edad. ")
+    st.subheader('Histograma')
+    st.write("\n13. Crear un histograma de los empleados agrupados por edad. ")
     st.write(df_empleados)
 
 
