@@ -10,8 +10,13 @@ st.title('Empleados')
 # Definición de funciones
 # ###############################################
 @st.cache
-def cargarDatos(nrows):
+def cargarDatosEjemplo(nrows):
     data = pd.read_csv('Employees.csv', nrows=nrows)
+    return data
+
+@st.cache
+def cargarDatosCompleto(nrows):
+    data = pd.read_csv('Employees.csv')
     return data
 
 @st.cache
@@ -49,7 +54,21 @@ def buscarEmpleadoPorUnitCaseSensitive(texto):
 # ###############################################
 
 # Sección - Pre-carga de datos.
-df_empleados = cargarDatos(500)
+df_empleados = cargarDatosEjemplo(500)
+
+btnCargarDatosEjemplo = st.sidebar.button('Cargar datos ejemplo (default)')
+if (btnCargarDatosEjemplo):
+   df_empleados = cargarDatosEjemplo(500)
+   contador = df_empleados.shape[0] 
+   st.write(f"Total de empleados identificados : {contador}")
+   st.write(df_empleados)
+    
+btnCargarDatosCompleto = st.sidebar.button('Cargar datos completo')
+if (btnCargarDatosCompleto):
+   df_empleados = cargarDatosCompleto()
+   contador = df_empleados.shape[0] 
+   st.write(f"Total de empleados identificados : {contador}")
+   st.write(df_empleados)
 
 st.sidebar.title("Búsqueda interactiva de empleados")
 st.sidebar.markdown("""
