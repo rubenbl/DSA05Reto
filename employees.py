@@ -15,7 +15,7 @@ def cargarDatosEjemplo(nrows):
     return data
 
 @st.cache
-def cargarDatosCompleto(nrows):
+def cargarDatosCompleto():
     data = pd.read_csv('Employees.csv')
     return data
 
