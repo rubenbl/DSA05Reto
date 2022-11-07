@@ -99,7 +99,7 @@ selectedboxHometown = st.sidebar.selectbox("Seleccionar Hometown", df_empleados[
 btnBuscarEmpleadoHometownPorSelectedBox = st.sidebar.button('Buscar empleado por "Hometown"')
 
 if (btnBuscarEmpleadoHometownPorSelectedBox):
-   df_filtroEmpleadosHometown = buscarEmpleadoPorEducationLevelCaseSensitive(selectedboxHometown)
+   df_filtroEmpleadosHometown = buscarEmpleadoPorHometownCaseSensitive(selectedboxHometown)
    contador = df_filtroEmpleadosHometown.shape[0]  
    st.write(f"Total de empleados identificados : {contador}")
    st.dataframe(df_filtroEmpleadosHometown)
