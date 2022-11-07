@@ -27,6 +27,11 @@ def buscarEmpleadoPorUnit(texto):
     df_tmp = df_empleados[df_empleados['Unit'].str.upper().str.contains(texto)]
     return df_tmp
 
+@st.cache
+def buscarEmpleadoPorUnitCaseSensitive(texto):
+    df_tmp = df_empleados[df_empleados['Unit'].str.contains(texto)]
+    return df_tmp
+
 # ###############################################
 # Main 
 # ###############################################
@@ -74,7 +79,7 @@ selectedboxUnit = st.sidebar.selectbox("Seleccionar Unit", df_empleados['Unit'].
 btnBuscarEmpleadoUnitPorSelectedBox = st.sidebar.button('Buscar empleado por "Unit"')
 
 if (btnBuscarEmpleadoUnitPorSelectedBox):
-   df_filtroEmpleadosUnit = buscarEmpleadoPorUnit(selectedboxUnit)
+   df_filtroEmpleadosUnit = buscarEmpleadoPorUnitCaseSensitive(selectedboxUnit)
    contador = df_filtroEmpleadosUnit.shape[0]  
    st.write(f"Total de empleados identificados : {contador}")
    st.dataframe(df_filtroEmpleadosUnit)
