@@ -12,5 +12,5 @@ def cargarDatos(nrows):
 df = cargarDatos(500)
 
 if st.sidebar.checkbox('Mostrar/ocultar el dataframe: '):
-    st.subheader('dataframe (employees)'
+    st.subheader('dataframe (employees)')
     st.write(df)
