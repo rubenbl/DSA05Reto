@@ -30,7 +30,7 @@ def buscarEmpleadoPorUnit(texto):
 @st.cache
 def buscarEmpleadoPorEducationLevelCaseSensitive(texto):
     
-    df_tmp = df_empleados.query(' (Education_Level == ,texto, )') 
+    df_tmp = df_empleados.query(' (Education_Level == "4" )') 
     #df_tmp = df_empleados[df_empleados['Education_Level'].str.contains(texto)]
     return df_tmp
 
