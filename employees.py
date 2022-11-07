@@ -51,6 +51,8 @@ def buscarEmpleadoPorUnitCaseSensitive(texto):
 # Sección - Pre-carga de datos.
 df_empleados = cargarDatos(500)
 
+st.sidebar.title("Búsqueda interactiva de empleados")
+
 # Sección - Mostrar/ocultar dataframe
 if st.sidebar.checkbox('Mostrar/ocultar el dataframe'):
     st.subheader('dataframe (employees)')
