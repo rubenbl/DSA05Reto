@@ -43,7 +43,7 @@ if (btnBuscarEmpleadoID):
    st.write(df_filtroEmpleadosID)
     
 inputEmpleadoHometown = st.sidebar.text_input('Busqueda por "Hometown" : ')
-btnBuscarEmpleadoHometown = st.sidebar.button('Buscar')
+btnBuscarEmpleadoHometown = st.sidebar.button('Buscar1')
 
 if (btnBuscarEmpleadoHometown):
    df_filtroEmpleadosHometown = buscarEmpleadoPorHometown(inputEmpleadoHometown.upper())
