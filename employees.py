@@ -54,7 +54,7 @@ df_empleados = cargarDatos(500)
 st.sidebar.title("Búsqueda interactiva de empleados")
 st.sidebar.markdown(""" 
 Actividad : DSA05 - Reto 
-Autor : Ruben Barrios
+\nAutor : Ruben Barrios
 """)
 
 # Sección - Mostrar/ocultar dataframe
