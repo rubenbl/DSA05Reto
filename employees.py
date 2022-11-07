@@ -17,6 +17,12 @@ def buscarEmpleadoPorID(texto):
     df_tmp = df_empleados[df_empleados['Employee_ID'].str.upper().str.contains(texto)]
     return df_tmp
 
+@st.cache
+def buscarEmpleadoPorHometown(texto):
+    df_tmp = df_empleados[df_empleados['Hometown'].str.upper().str.contains(texto)]
+    return df_tmp
+
+
 # ###############################################
 # Main 
 # ###############################################
@@ -36,4 +42,11 @@ if (btnBuscarEmpleadoID):
    st.write(f"Total de empleados identificados : {contador}")
    st.write(df_filtroEmpleadosID)
     
-   
+inputEmpleadoHometown = st.sidebar.text_input('Busqueda por "Hometown" : ')
+btnBuscarEmpleadoHometown = st.sidebar.button('Buscar')
+
+if (btnBuscarEmpleadoHometown):
+   df_filtroEmpleadosHometown = buscarEmpleadoPorHometown(inputEmpleadoHometown.upper())
+   contador = df_filtroEmpleadosHometown.shape[0] 
+   st.write(f"Total de empleados identificados : {contador}")
+   st.write(df_filtroEmpleadosHometown)
