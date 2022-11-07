@@ -56,6 +56,13 @@ def buscarEmpleadoPorUnitCaseSensitive(texto):
 # Sección - Pre-carga de datos.
 df_empleados = cargarDatosEjemplo(500)
 
+st.sidebar.title("Búsqueda interactiva de empleados")
+st.sidebar.markdown("""
+Actividad : DSA05 - Reto 
+\nAutor : Ruben Barrios
+""")
+
+st.sidebar.text("-------------------------")
 btnCargarDatosEjemplo = st.sidebar.button('Cargar datos ejemplo (default)')
 if (btnCargarDatosEjemplo):
    df_empleados = cargarDatosEjemplo(500)
@@ -69,12 +76,6 @@ if (btnCargarDatosCompleto):
    contador = df_empleados.shape[0] 
    st.write(f"Total de empleados identificados : {contador}")
    st.write(df_empleados)
-
-st.sidebar.title("Búsqueda interactiva de empleados")
-st.sidebar.markdown("""
-Actividad : DSA05 - Reto 
-\nAutor : Ruben Barrios
-""")
 st.sidebar.text("-------------------------")
 
 # Sección - Mostrar/ocultar dataframe
