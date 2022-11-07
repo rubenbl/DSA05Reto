@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import seaborn as sns
 
 st.title('Empleados')
 
@@ -122,5 +123,7 @@ if st.sidebar.checkbox('Mostrar/ocultar histograma'):
     st.subheader('Histograma')
     st.write("\n13. Crear un histograma de los empleados agrupados por edad. ")
     st.write(df_empleados)
+    # Grafico: Seaborn
+    sns.histplot(x=df_empleados['Age'])
 
 
