@@ -28,6 +28,11 @@ def buscarEmpleadoPorUnit(texto):
     return df_tmp
 
 @st.cache
+def buscarEmpleadoPorEducationLevelCaseSensitive(texto):
+    df_tmp = df_empleados[df_empleados['Education_Level'].str.contains(texto)]
+    return df_tmp
+
+@st.cache
 def buscarEmpleadoPorUnitCaseSensitive(texto):
     df_tmp = df_empleados[df_empleados['Unit'].str.contains(texto)]
     return df_tmp
@@ -74,6 +79,16 @@ if (btnBuscarEmpleadoUnit):
    st.write(f"Total de empleados identificados : {contador}")
    st.write(df_filtroEmpleadosUnit)
 
+# Sección - Búsqueda por Education_Level (selectedbox)
+selectedboxEducationLevel = st.sidebar.selectbox("Seleccionar Education_Level", df_empleados['Education_Level'].unique())
+btnBuscarEmpleadoEducationLevelPorSelectedBox = st.sidebar.button('Buscar empleado por "Education_Level"')
+
+if (btnBuscarEmpleadoEducationLevelPorSelectedBox):
+   df_filtroEmpleadosEducationLevel = buscarEmpleadoPorEducationLevelCaseSensitive(selectedboxEducationLevel)
+   contador = df_filtroEmpleadosEducationLevel.shape[0]  
+   st.write(f"Total de empleados identificados : {contador}")
+   st.dataframe(df_filtroEmpleadosEducationLevel)
+   
 # Sección - Búsqueda por Unit (selectedbox)
 selectedboxUnit = st.sidebar.selectbox("Seleccionar Unit", df_empleados['Unit'].unique())
 btnBuscarEmpleadoUnitPorSelectedBox = st.sidebar.button('Buscar empleado por "Unit"')
@@ -83,4 +98,3 @@ if (btnBuscarEmpleadoUnitPorSelectedBox):
    contador = df_filtroEmpleadosUnit.shape[0]  
    st.write(f"Total de empleados identificados : {contador}")
    st.dataframe(df_filtroEmpleadosUnit)
-   
