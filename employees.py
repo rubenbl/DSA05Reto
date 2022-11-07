@@ -147,9 +147,10 @@ if st.sidebar.checkbox('Mostrar/ocultar gráfico índice de deserción'):
     st.subheader('Grafico')
     st.write("\n15. Analizar los datos con una gráfica que nos permita visualizar las ciudades (Hometown) que tienen el mayor índice de deserción. ")
     # Grafico: 
+    fig, axs = plt.subplots()
     df_empleadosResumen = df_empleados.groupby(['Hometown']).mean()
     df_empleadosResumen.sort_values('Hometown', ascending=True)
-    fig,axs = df_empleadosResumen.plot(subplots=True, layout=(2,5), figsize=(30,10)) 
+    axs = df_empleadosResumen.plot(subplots=True, layout=(2,5), figsize=(30,10)) 
     st.pyplot(fig)
 
     
